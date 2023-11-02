@@ -26,6 +26,10 @@ input {
     gap: 3em;
 }
 
+.main__result {
+    font-family: 'Sometype Mono', monospace;
+}
+
 .result-button {
     border-color: rgb(111, 79, 79);
     border-radius: 2px;
@@ -40,4 +44,5 @@ input {
 
 #errormessage {
     color: red;
+    font-family: 'Sometype Mono', monospace;
 }

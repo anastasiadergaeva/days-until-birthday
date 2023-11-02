@@ -9,15 +9,15 @@ function getDaysUntilBirthday() {
     errorMessage.innerHTML = '';
     resultParagraph.innerHTML = '';
     if (dateFromInput.value == '') {
-        errorMessage.textContent = 'Введите свою дату рождения';
+        errorMessage.textContent = 'Введите день и месяц своего рождения';
     } else {
         const parsedDate = Date.parse(currentDate);
         const userBirthday = Date.parse(dateFromInputValue);
 
         let datesDiff = userBirthday - parsedDate;
-        let datesDiffInDays = Math.floor(datesDiff / 1000 / 3600 / 24);
+        let datesDiffInDays = Math.ceil(datesDiff / 1000 / 3600 / 24);
         if (datesDiffInDays < 0) {
-            resultParagraph.textContent = 'Ваш день рождения уже прошёл!';
+            resultParagraph.innerHTML = 'Ваш день рождения уже прошёл!<br/>Попробуйте в новом году!';
         } else if (datesDiffInDays === 0) {
             resultParagraph.textContent = 'Вы родились сегодня! С днём рождения!';
         } else {
